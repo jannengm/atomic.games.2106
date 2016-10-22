@@ -12,7 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4881977b-f338-4501-b99e-7d7d30c1c724" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
     </list>
     <ignored path="atomic.games.2106.iws" />
@@ -36,10 +36,18 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-123">
-              <caret line="67" column="1" selection-start-line="67" selection-start-column="1" selection-end-line="67" selection-end-column="1" />
+            <state relative-caret-position="252">
+              <caret line="191" column="26" selection-start-line="191" selection-start-column="26" selection-end-line="191" selection-end-column="26" />
               <folding>
-                <element signature="e#62#81#0" expanded="true" />
+                <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#379#426#1" expanded="false" />
+                <element signature="e#848#2064#0" expanded="false" />
+                <element signature="e#2066#2484#0" expanded="false" />
+                <element signature="e#2486#2734#0" expanded="false" />
+                <element signature="e#2736#2969#0" expanded="false" />
+                <element signature="e#2971#3060#0" expanded="false" />
+                <element signature="e#3062#3984#0" expanded="false" />
+                <element signature="e#4727#4778#1" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -147,12 +155,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1477158900666</updated>
-      <workItem from="1477158902021" duration="496000" />
+      <workItem from="1477158902021" duration="2055000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="496000" />
+    <option name="totallyTimeSpent" value="2055000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="23" width="1260" height="733" extended-state="0" />
@@ -196,10 +204,18 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-123">
-          <caret line="67" column="1" selection-start-line="67" selection-start-column="1" selection-end-line="67" selection-end-column="1" />
+        <state relative-caret-position="252">
+          <caret line="191" column="26" selection-start-line="191" selection-start-column="26" selection-end-line="191" selection-end-column="26" />
           <folding>
-            <element signature="e#62#81#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#379#426#1" expanded="false" />
+            <element signature="e#848#2064#0" expanded="false" />
+            <element signature="e#2066#2484#0" expanded="false" />
+            <element signature="e#2486#2734#0" expanded="false" />
+            <element signature="e#2736#2969#0" expanded="false" />
+            <element signature="e#2971#3060#0" expanded="false" />
+            <element signature="e#3062#3984#0" expanded="false" />
+            <element signature="e#4727#4778#1" expanded="false" />
           </folding>
         </state>
       </provider>

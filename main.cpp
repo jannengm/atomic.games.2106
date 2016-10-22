@@ -176,12 +176,20 @@ void get_Pmove( int board[HEIGHT][WIDTH], CMove* possible)
         for(int col = 0; col < WIDTH; col++){
             if( board[row][col] == 0) {
                 possible[i].column = col;
-                possible[i].rating = 5;// default value will update based on stage of the game
-                cout << "woo" << endl ;
-            i++;
+                possible[i].rating = 0;// default value will update based on stage of the game
+               // cout << "woo" << endl ;
+
+
+            }else if(row == 0 )
+            {
+                if(board[row][col] != 0)
+                {
+                possible[i].column = col;
+                possible[i].rating = -10;
+            }
+                i++;
                 if(i> WIDTH)
                     break;
-            }
             
         }
     }
