@@ -19,9 +19,17 @@ using namespace std;
 
 const string TEST_STR = "[[1,2,3,4,5,6,7],[8,9,0,1,2,3,4],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[2,2,0,0,0,0,0],[1,1,0,0,0,0,0]]";
 
+struct CMove{
+    int column;
+    int rating;
+};
 void read_json(const string & str, int board[HEIGHT][WIDTH]);
 void print_board(int board[HEIGHT][WIDTH]);
-int * get_Pmove(int board [HEIGHT][WIDTH]);
+void get_Pmove(int board [HEIGHT][WIDTH], CMove * possible);
+int get_Best_Move(CMove *Possible);
+
+
+
 int main(int argc, char ** argv) {
     // std::cout << TEST_STR << std::endl;
     
@@ -36,9 +44,27 @@ int main(int argc, char ** argv) {
     else{
         cout << "Invalid args" << endl;
     }
-    int a[] = get_Pmove(board);
+
+    CMove *x = new CMove[7];
+
+    get_Pmove(board, x);
+
+    //stage of the game check
+
+    //winn checker
+
+
+    //lose CMovechecker
+
+
+    //look for 7 location
+
     //    return 1;
-    exit(a);
+    
+    
+    int a = get_Best_Move( x );
+    a = 2;
+    exit( a );
 }
 
 void read_json(const string & str, int board[HEIGHT][WIDTH]) {
@@ -71,14 +97,31 @@ void print_board(int board[HEIGHT][WIDTH]) {
 }
 
 
-int * get_Pmove( int board[HEIGHT][WIDTH])
+void get_Pmove( int board[HEIGHT][WIDTH], CMove* possible)
 {
-    for(int row = 5; row < HEIGHT; row--){
+//CMove*possible = X;
+    int i = 0;
+
+    for(int row = 6; row >= 0; row--){
         for(int col = 0; col < WIDTH; col++){
-            if( board[row][col] == 0)
-                return col;
-            
+            if( board[row][col] == 0) {
+                possible[i].column = col;
+                possible[i].rating = 5;// default value will update based on stage of the game
+                cout << "woo" << endl ;
+            i++;
+                if(i> WIDTH)
+                    break;
+            }
             
         }
     }
+    //return possible;
 }
+
+
+int get_Best_Move( CMove* pMoves)
+{
+    return 1;
+}
+
+
