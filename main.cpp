@@ -16,12 +16,20 @@ using namespace std;
 
 const string TEST_STR = "[[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[2,2,2,2,1,1,1],[1,0,1,0,0,0,2],[1,2,1,1,2,2,1]]";
 
+struct CMove{
+    int column;
+    int rating;
+};
 void read_json(const string & str, int board[HEIGHT][WIDTH]);
 void print_board(int board[HEIGHT][WIDTH]);
 int * get_Pmove(int board [HEIGHT][WIDTH]);
 bool is_valid_move(int & col, int board[HEIGHT][WIDTH]);
 void play_rand(int board[HEIGHT][WIDTH]);
 int score_row(int player, int row, int col, int board[HEIGHT][WIDTH]);
+void get_Pmove(int board [HEIGHT][WIDTH], CMove * possible);
+int get_Best_Move(CMove *Possible);
+
+
 
 int main(int argc, char ** argv) {
     // std::cout << TEST_STR << std::endl;
@@ -46,7 +54,38 @@ int main(int argc, char ** argv) {
 //    int a[] = get_Pmove(board);
     //    return 1;
 //    exit(a);
-    exit(0);
+//    exit(0);
+    // read_json(TEST_STR, board);
+    // print_board(board);
+    if(argc > 1) {
+        //  cout << "Got from input: " << argv[1] << endl;
+        read_json(argv[2], board);
+        print_board(board);
+    }
+    else{
+        cout << "Invalid args" << endl;
+    }
+
+    CMove *x = new CMove[7];
+
+    get_Pmove(board, x);
+
+    //stage of the game check
+
+    //winn checker
+
+
+    //lose CMovechecker
+
+
+    //look for 7 location
+
+    //    return 1;
+    
+    
+    int a = get_Best_Move( x );
+    a = 2;
+    exit( a );
 }
 
 void read_json(const string & str, int board[HEIGHT][WIDTH]) {
@@ -78,19 +117,6 @@ void print_board(int board[HEIGHT][WIDTH]) {
     
 }
 
-
-//int * get_Pmove( int board[HEIGHT][WIDTH])
-//{
-//    for(int row = 5; row < HEIGHT; row--){
-//        for(int col = 0; col < WIDTH; col++){
-//            if( board[row][col] == 0)
-//                return col;
-//
-//
-//        }
-//    }
-//}
-
 void play_rand(int board[HEIGHT][WIDTH]){
     srand(time(NULL));
     int a;
@@ -108,19 +134,14 @@ bool is_valid_move(int & col, int board[HEIGHT][WIDTH]){
     return board[0][col] == 0;
 }
 
-void foobar(int & row, int & col, int board[HEIGHT][WIDTH]){
-    const int range = 4;
-
-}
-
-int score_row(int player, int row, int col, int board[HEIGHT][WIDTH]){
+int score_row(int player, int row, int col, int board[HEIGHT][WIDTH]) {
     int l_bound = (col - 3 < 0) ? 0 : col - 3;
     int r_bound = (col + 3 >= WIDTH) ? WIDTH - 1 : col + 3;
     int max_score = 0;
     int val;
 
     int sum = 0;
-    for(int j = col; col <= r_bound; col++) {
+    for (int j = col; col <= r_bound; col++) {
         for (int i = l_bound; i < 4; i++) {
             val = board[i][col];
             if (val == player) {
@@ -139,10 +160,38 @@ int score_row(int player, int row, int col, int board[HEIGHT][WIDTH]){
                 }
             }
         }
-        if( (sum < 0 ? sum * -1 : sum) > max_score ){
+        if ((sum < 0 ? sum * -1 : sum) > max_score) {
             max_score = sum;
         }
     }
     return max_score;
-
 }
+
+void get_Pmove( int board[HEIGHT][WIDTH], CMove* possible)
+{
+//CMove*possible = X;
+    int i = 0;
+
+    for(int row = 6; row >= 0; row--){
+        for(int col = 0; col < WIDTH; col++){
+            if( board[row][col] == 0) {
+                possible[i].column = col;
+                possible[i].rating = 5;// default value will update based on stage of the game
+                cout << "woo" << endl ;
+            i++;
+                if(i> WIDTH)
+                    break;
+            }
+            
+        }
+    }
+    //return possible;
+}
+
+
+int get_Best_Move( CMove* pMoves)
+{
+    return 1;
+}
+
+
